@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.10.4] - 2026-08-19
+
+### Changed
+
+- Viridian Forest rare 1% grass encounter changed from Pidgeotto to Pikachu.
+
 ## [1.10.3] - 2026-08-05
 
 ### Fixed
