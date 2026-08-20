@@ -467,7 +467,7 @@ return function(mod)
     CHARMELEON = { baseStats = { special = 70 } },
     CHARIZARD = { baseStats = { special = 95 } },
     ARBOK = { baseStats = { hp = 62, attack = 95, speed = 90 } },
-    PIKACHU = { baseStats = { hp = 60, defense = 50, special = 70 } },
+    PIKACHU = { baseStats = { hp = 45, defense = 50, special = 55} },
     CLEFABLE = { baseStats = { special = 95 } },
     VULPIX = { baseStats = { hp = 45, defense = 45, special = 70, speed = 75 } },
     WIGGLYTUFF = { baseStats = { defense = 55, special = 85 } },
@@ -481,7 +481,7 @@ return function(mod)
     PONYTA = { baseStats = { speed = 100 } },
     RAPIDASH = { baseStats = { speed = 115 } },
     FARFETCHD = { baseStats = {
-      hp = 62, attack = 75, defense = 65, special = 68, speed = 70,
+      hp = 62, attack = 90, defense = 65, special = 68, speed = 70,
     } },
     MUK = { baseStats = { special = 85 } },
     ONIX = { baseStats = { hp = 75, attack = 80, special = 65, speed = 85 } },

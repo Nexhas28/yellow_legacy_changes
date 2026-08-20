@@ -100,7 +100,7 @@ learnsets = {
     { 1, "Tackle" },
     { 1, "Growl" },
     { 7, "Leech Seed" },
-    { 9, "Vine Whip" },
+    { 13, "Vine Whip" },
     { 22, "Poisonpowder" },
     { 25, "Sleep Powder" },
     { 29, "Razor Leaf" },
@@ -145,8 +145,8 @@ learnsets = {
     { 9, "Ember" },
     { 13, "Leer" },
     { 17, "Rage" },
-    { 19, "Fire Punch" },
-    { 23, "Bite" },
+    { 19, "Bite" },
+    { 22, "Fire Punch" },
     { 33, "Slash" },
     { 36, "Wing Attack" },
     { 42, "Flamethrower" },
@@ -159,8 +159,8 @@ learnsets = {
     { 9, "Ember" },
     { 13, "Leer" },
     { 17, "Rage" },
-    { 19, "Fire Punch" },
-    { 23, "Bite" },
+    { 19, "Bite" },
+    { 22, "Fire Punch" },
     { 33, "Slash" },
     { 38, "Flamethrower" },
     { 46, "Fire Spin" },
@@ -172,8 +172,8 @@ learnsets = {
     { 9, "Ember" },
     { 13, "Leer" },
     { 17, "Rage" },
-    { 19, "Fire Punch" },
-    { 23, "Bite" },
+    { 19, "Bite" },
+    { 22, "Fire Punch" },
     { 33, "Slash" },
     { 40, "Flamethrower" },
     { 48, "Slam" },
@@ -1468,8 +1468,8 @@ learnsets = {
   ["Squirtle"] = {
     { 1, "Tackle" },
     { 1, "Tail Whip" },
-    { 5, "Bubble" },
-    { 10, "Water Gun" },
+    { 6, "Bubble" },
+    { 13, "Water Gun" },
     { 15, "Bite" },
     { 21, "Bubblebeam" },
     { 27, "Body Slam" },
@@ -2206,7 +2206,7 @@ encounters = {
   },
   ["ROUTE_10"] = {
     grass = {
-      { 16, "Magnemite" },
+      { 18, "Voltorb" },
       { 20, "Raticate" },
       { 18, "Magnemite" },
       { 20, "Magnemite" },
@@ -2227,8 +2227,8 @@ encounters = {
         { 20, "Krabby" },
       },
       ["SUPER_ROD"] = {
-        { 25, "Krabby" },
         { 30, "Krabby" },
+        { 30, "Slowpoke" },
         { 30, "Horsea" },
         { 35, "Kingler" },
       },
@@ -2249,7 +2249,7 @@ encounters = {
     },
     rods = {
       ["OLD_ROD"] = {
-        { 5, "Goldeen" },
+        { 5, "Magikarp" },
         { 5, "Poliwag" },
       },
       ["GOOD_ROD"] = {
@@ -2526,16 +2526,16 @@ encounters = {
   },
   ["ROUTE_21"] = {
     grass = {
-      { 25, "Pidgey" },
-      { 23, "Rattata" },
-      { 23, "Pidgey" },
-      { 21, "Pidgey" },
-      { 27, "Mr_mime" },
-      { 25, "Rattata" },
-      { 25, "Raticate" },
-      { 27, "Pidgeotto" },
-      { 29, "Pidgeotto" },
-      { 30, "Pidgeot" },
+      { 34, "Pidgey" },
+      { 34, "Rattata" },
+      { 36, "Pidgey" },
+      { 36, "Tangela" },
+      { 36, "Mr_mime" },
+      { 36, "Tangela" },
+      { 36, "Raticate" },
+      { 36, "Pidgeotto" },
+      { 36, "Pidgeotto" },
+      { 36, "Pidgeot" },
     },
     water = {
       { 20, "Tentacool" },
@@ -2709,7 +2709,7 @@ encounters = {
       { 11, "Spearow" },
       { 11, "Ekans" },
       { 12, "Mankey" },
-      { 13, "Farfetchd" },
+      { 13, "Pidgey" },
       { 13, "Sandshrew" },
       { 13, "Rattata" },
       { 14, "Sandshrew" },
@@ -2719,7 +2719,7 @@ encounters = {
     },
     rods = {
       ["OLD_ROD"] = {
-        { 5, "Goldeen" },
+        { 5, "Magikarp" },
         { 5, "Poliwag" },
       },
       ["GOOD_ROD"] = {
@@ -2775,7 +2775,7 @@ encounters = {
     },
     rods = {
       ["OLD_ROD"] = {
-        { 5, "Goldeen" },
+        { 5, "Magikarp" },
         { 5, "Poliwag" },
       },
       ["GOOD_ROD"] = {
@@ -3129,7 +3129,7 @@ encounters = {
       { 5, "Oddish" },
       { 6, "Metapod" },
       { 6, "Oddish" },
-      { 7, "Kakuna" },
+      { 7, "Pikachu" },
       { 8, "Pidgey" },
       { 9, "Pikachu" },
     },

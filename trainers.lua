@@ -303,10 +303,10 @@ return {
       { {level = 56, species = "SLOWBRO"}, {level = 55, species = "CLOYSTER"}, {level = 55, species = "DEWGONG"}, {level = 56, species = "JYNX"}, {level = 57, species = "LAPRAS"} },
     } },
     ["OPP_LT_SURGE"] = { parties = {
-      { {level = 29, species = "RAICHU"} },
+      { {level = 22, species = "VOLTORB"}, {level = 23, species = "MAGNEMITE"}, {level = 24, species = "RAICHU"} },
     } },
     ["OPP_MISTY"] = { parties = {
-      { {level = 19, species = "PSYDUCK"}, {level = 18, species = "GOLDEEN"}, {level = 21, species = "STARMIE"} },
+      { {level = 19, species = "POLIWHIRL"}, {level = 18, species = "GOLDEEN"}, {level = 21, species = "STARMIE"} },
     } },
     ["OPP_POKEMANIAC"] = { parties = {
       { {level = 43, species = "MAGMAR"}, {level = 43, species = "JYNX"}, {level = 43, species = "LAPRAS"} },
@@ -405,7 +405,7 @@ return {
       { {level = 33, species = "WEEZING"} },
     } },
     ["OPP_SABRINA"] = { parties = {
-      { {level = 50, species = "ABRA"}, {level = 48, species = "HYPNO"}, {level = 49, species = "MR_MIME"}, {level = 50, species = "KADABRA"}, {level = 50, species = "ALAKAZAM"} },
+      { {level = 47, species = "JYNX"}, {level = 48, species = "HYPNO"}, {level = 49, species = "MR_MIME"}, {level = 48, species = "SLOWBRO"}, {level = 50, species = "ALAKAZAM"} },
     } },
     ["OPP_SAILOR"] = { parties = {
       { {level = 19, species = "MACHOP"}, {level = 19, species = "KRABBY"} },
