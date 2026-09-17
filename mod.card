@@ -21,12 +21,14 @@ return {
       "DRAGON PHYS toggle in the mod's own MODS-menu options (default OFF = Gen 1 faithful)",
       "HARD MODE toggle in the OPTIONS menu plus a YES/NO prompt in Oak's intro on a new game (default OFF)",
       "Crystal Tear post-game quest: Oak gifts the key item after the Hall of Fame with 150 species caught, and using it in Cerulean Cave B1F after Mewtwo reveals a level-75 Mew with a strong moveset",
+      "Jessie & James Mt Moon B2F ambush on Red/Blue: after a fossil is in hand, stepping onto (3,5) triggers the duo's ambush and a battle against Team Rocket party 42; the duo's battle pic (derived from the player's imported Yellow ROM cache) shows behind that party",
     },
     known = {
       "encounter rates stay vanilla; only slot tables change",
       "PSYWAVE keeps its vanilla damage formula (the document only specifies its accuracy)",
       "stat patches write the new values; unpatched stats are untouched",
       "no new trainers are added: only existing classes' teams change, party indexes preserved; rematch/Victory-Road battles from the hack are not ported",
+      "the Jessie & James battle pic is the vanilla Yellow sprite (derived dynamically from the player's imported Yellow cache; its credits list no artist for it)",
     },
   },
   credits = {

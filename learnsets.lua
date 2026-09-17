@@ -3131,7 +3131,7 @@ encounters = {
       { 6, "Oddish" },
       { 7, "Kakuna" },
       { 8, "Pidgey" },
-      { 9, "Pikachu" },
+      { 5, "Pikachu" },
     },
   },
 }

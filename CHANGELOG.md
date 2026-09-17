@@ -1,10 +1,102 @@
 # Changelog
 
-## [1.10.4] - 2026-08-19
+## [1.12.0] - 2026-09-17
 
 ### Changed
 
-- Viridian Forest rare 1% grass encounter changed from Pidgeotto to Pikachu.
+- Updated Jessie & James overworld and battle assets to comply with new distribution rules. The mod no longer bundles raw image files; instead, it automatically and safely borrows them from your imported Pokémon Yellow game.
+
+## [1.11.7] - 2026-08-06
+
+### Changed
+
+- The Jessie & James Mt Moon B2F overworld sprites are now the manually
+  recoloured sheets supplied by the player (white Rocket uniform, purple /
+  blue hair), replacing the previous generated recolor.
+
+## [1.11.6] - 2026-08-06
+
+### Changed
+
+- Recoloured the Jessie & James Mt Moon B2F overworld sprites to the Rocket
+  uniform look: white uniform, purple hair (Jessie) / blue hair (James),
+  black outlines.  The colours are baked straight into the sprite pixels
+  (trueColor), so they render identically in every COLORS mode.
+
+## [1.11.5] - 2026-08-06
+
+### Fixed
+
+- The Jessie & James Mt Moon B2F overworld sprites now render with the Rocket
+  uniform palette in every COLORS mode.  The prior fixes set a `paletteSource`
+  crosswalk, but the committed sprite-assignment table is keyed to the
+  Red/Blue sheet, so the duo's palette depended on the active colour mode.
+  The Rocket palette (group 3) is now baked directly into the shipped sprite
+  pixels and the sprites register as `trueColor`, so the engine draws them
+  as-is -- no palette table, no mode dependence.
+
+## [1.11.4] - 2026-08-06
+
+### Fixed
+
+- The Jessie & James Mt Moon B2F overworld sprites no longer resolve to a
+  random palette in Advanced mode.  The prior fix used the Yellow cache's
+  sprite-sheet indices (`SpriteSheetPointerTable[68]` / `[69]`), but the
+  committed `spriteAssignment` table is keyed to the Red/Blue sheet where
+  `[69]` maps to "random" -- James picked up a seeded random palette and
+  looked yellow-tinged.  Both sprites now use the Rocket grunt's own index
+  (`[23]`), which resolves to palette group 3 -- the Rocket uniform -- so
+  the duo matches the grunts in Advanced mode.
+
+## [1.11.3] - 2026-08-06
+
+### Changed
+
+- The Jessie & James Mt Moon B2F overworld sprites now resolve their
+  Advanced-mode colours from the real Yellow sprite-sheet crosswalks
+  (Jessie `SpriteSheetPointerTable[68]`, James `[69]`), pulled from the
+  user's Yellow ROM import, instead of reusing the Rocket grunt palette
+  (`[23]`).  The shipped sheets are the ROM-extracted 2-bit grayscale
+  walkers, so `PaletteFX.spriteObp` restores the duo's intended colours.
+
+## [1.11.2] - 2026-08-06
+
+### Fixed
+
+- The Jessie & James Mt Moon B2F overworld sprites now take the Rocket
+  uniform palette in Advanced colour mode instead of showing as plain
+  black and white.  The mod-registered `SPRITE_JESSIE` / `SPRITE_JAMES`
+  carry no ROM colour data (the duo is Yellow-only, so a Red/Blue cache
+  has no sprite-palette entry for them); `PaletteFX.spriteObp` resolved
+  nothing and left them in DMG grays.  Both now ship a `paletteSource`
+  pointing at the Rocket grunt's sprite-sheet palette (group 3), the
+  closest ROM crosswalk available on a Red/Blue cache.
+
+## [1.11.1] - 2026-08-06
+
+### Fixed
+
+- The Jessie & James Mt Moon B2F ambush no longer shows two generic
+  Rocket grunts on Red/Blue.  The duo's overworld sprites were appended
+  with `sprite = "SPRITE_ROCKET"`; they now use their own Yellow
+  sprite ids (`SPRITE_JESSIE` / `SPRITE_JAMES`).  The two vanilla
+  Yellow 4-shade walker sheets are registered behind the same
+  not-Yellow guard as the rest of the event, so a Yellow cache — which
+  already carries both sprites — is untouched.
+
+## [1.11.0] - 2026-08-05
+
+### Added
+
+- **Jessie & James (Mt Moon B2F)** on Red/Blue.  The engine ships the
+  ambush event only on Yellow; this mod wires the same event onto
+  MT_MOON_B2F on Red/Blue: after a fossil is in hand, stepping onto
+  (3,5) triggers the "Stop right there!" ambush, a battle against Team
+  Rocket party 42 (EKANS 15 / MEOWTH 16 / KOFFING 15), and the duo's
+  parting lines before they vanish.  The Rocket theme
+  (Music_MeetEvilTrainer) stands in for the Yellow-only Meet Jessie &
+  James sting, the two objects are appended hidden to the map, and the
+  duo's battle pic (the vanilla Yellow sprite) shows behind that party.
 
 ## [1.10.3] - 2026-08-05
 

@@ -1,7 +1,7 @@
 {
   "id": "yellow_legacy_changes",
   "name": "Yellow Legacy Changes",
-  "version": "1.10.4",
+  "version": "1.12.0",
   "api": 2,
   "entry": "main.lua",
   "profile": "content",
@@ -15,5 +15,6 @@
   "optional_dependencies": [],
   "conflicts": [],
   "description": "Yellow Legacy by TSP changes: buffed/nerfed moves, rebalanced stats, trade evolutions become level evolutions, rebalanced trainer and gym-leader teams (rival Eevee replaced by the starter lines: Bulbasaur for Jolteon, Charmander for Flareon, Squirtle for Vaporeon), Ghost special + super-effective vs Psychic, a MODS-menu toggle for Dragon physical, an optional HARD MODE (Set style, no items in battle, badge-gated level caps -- offered when starting a new game and toggleable in the OPTIONS menu), and the Crystal Tear post-game quest: Oak gifts the key item after the Hall of Fame with 150 species caught, and using it in Cerulean Cave B1F after Mewtwo reveals a level-75 Mew.",
-  "github": "ShaneMcGovernIE/yellow_legacy_changes"
+  "github": "ShaneMcGovernIE/yellow_legacy_changes",
+  "assets_transforms": "transforms.lua"
 }

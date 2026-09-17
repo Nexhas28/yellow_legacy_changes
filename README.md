@@ -45,6 +45,21 @@ MEGA PUNCH / AMNESIA / SOFTBOILED.  Whatever the outcome -- win, catch,
 flee, or lose -- the **CRYSTAL TEAR shatters** and leaves the bag: the
 encounter is one shot for good.
 
+## Jessie & James (Mt Moon) on Red/Blue
+
+Yellow's Mt Moon B2F ambush normally only ships on Yellow.  On Red or
+Blue this mod wires the same event in: after you grab a fossil, stepping
+onto the tile at the end of the rock corridor (3,5) makes **Jessie &
+James** pop in, delivers the "Stop right there!" / fossil ultimatum, and
+starts a double battle against Team Rocket party 42 (EKANS 15 / MEOWTH
+16 / KOFFING 15).  Beat them and they blast off with their parting
+lines; the Rocket theme (Music_MeetEvilTrainer) stands in for the
+Yellow-only Meet Jessie & James sting, and the duo's battle pic (the
+vanilla Yellow sprite) shows behind that party.  Their defeat flag is
+`EVENT_BEAT_MT_MOON_3_JESSIE_JAMES`, so the ambush fires once per run.
+On Yellow the engine's own event keeps playing — this mod never
+double-fires it.
+
 Tables show the **new values**; `(+X)` / `(-X)` marks how much the value
 moved from vanilla.
 

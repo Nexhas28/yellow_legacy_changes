@@ -552,6 +552,67 @@ return function(mod)
     if type(loaded) == "table" then CrystalTear = loaded end
   end
 
+  -- ---- Jessie & James Mt Moon B2F ambush (jessie_james.lua) ----
+  -- The engine ships this event only on a Yellow boot (data/scripts/
+  -- yellow_jessie_james.lua, registered behind GameVersion.isYellow()).
+  -- On Red/Blue the map lacks the duo's objects, their text and the
+  -- battle pic, so the same event is wired onto the shared MT_MOON_B2F
+  -- table when the running game is NOT Yellow: a Yellow cache already
+  -- carries the _MtMoonJessieJamesText* constants (content.text:register
+  -- errors on an existing id), and the engine's own event would
+  -- double-fire there.
+  local JessieJames = {}
+  do
+    local loaded = loadSibling(mod, "jessie_james.lua")
+    if type(loaded) == "table" then JessieJames = loaded end
+  end
+  local GameVersion = require("src.core.GameVersion")
+  if not GameVersion.isYellow() and JessieJames.TEXTS then
+    -- The duo's overworld sprites and battle pic are Yellow-only (the Red/Blue
+    -- cache has no SPRITE_JESSIE / SPRITE_JAMES / picJessieJames). When running
+    -- on Red/Blue, we dynamically borrow them from the player's imported Yellow
+    -- cache via mod.datasets:open("yellow") without shipping raw ROM assets.
+    local yellow = mod.datasets and mod.datasets:open("yellow")
+    local yRocket = yellow and yellow.content.trainers:get("OPP_ROCKET")
+    local yJessie = yellow and yellow.content.sprites:get("SPRITE_JESSIE")
+    local yJames = yellow and yellow.content.sprites:get("SPRITE_JAMES")
+
+    local jessieImg = yJessie and yellow.assets:path(yJessie.image)
+    local jamesImg = yJames and yellow.assets:path(yJames.image)
+    local jessieJamesPic = yRocket and yRocket.picJessieJames and yellow.assets:path(yRocket.picJessieJames)
+
+    if jessieImg and jamesImg and jessieJamesPic then
+      mod.content.sprites:register("SPRITE_JESSIE", {
+        id = "SPRITE_JESSIE",
+        image = jessieImg,
+        frames = 6, walker = true,
+        paletteSource = "SPRITE_ROCKET",
+      })
+      mod.content.sprites:register("SPRITE_JAMES", {
+        id = "SPRITE_JAMES",
+        image = jamesImg,
+        frames = 6, walker = true,
+        paletteSource = "SPRITE_ROCKET",
+      })
+      local baseMap = mod.content.maps:get("MT_MOON_B2F")
+      local objects, jessie, james = JessieJames.mapObjects(
+        baseMap and baseMap.objects)
+      mod.content.maps:patch("MT_MOON_B2F", { objects = objects })
+      for id, text in pairs(JessieJames.TEXTS) do
+        mod.content.text:register(id, text)
+      end
+      mod.content.map_scripts:register("MT_MOON_B2F", {
+        onStep = JessieJames.makeOnStep(jessie, james),
+      })
+      -- the duo's battle pic behind OPP_ROCKET party 42 (BattleState reads
+      -- trainer.picJessieJames for OPP_ROCKET parties >= 42); unknown
+      -- top-level trainer keys are preserved by trainers:patch
+      mod.content.trainers:patch("OPP_ROCKET", {
+        picJessieJames = jessieJamesPic,
+      })
+    end
+  end
+
   -- the key item Oak hands over once the Hall of Fame run is complete
   mod.content.items:register("CRYSTAL_TEAR", {
     id = "CRYSTAL_TEAR", name = "CRYSTAL TEAR",
@@ -942,5 +1003,6 @@ return function(mod)
     rivalVariantFor = rivalVariantFor,
     crystalTear = CrystalTear,
     hardMode = HardMode,
+    jessieJames = JessieJames,
   }
 end
